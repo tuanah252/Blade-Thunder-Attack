@@ -10,7 +10,12 @@ public class OnDrag : MonoBehaviour
     private bool check;
     Vector3 offset;
     private object collision;
-
+    public float rotationSpeed = 10f;
+    private void Update()
+    {
+        // Xoay đối tượng xung quanh trục Z
+        transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+    }
     void OnMouseDown()
     {
         check = true;
